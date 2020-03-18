@@ -1,0 +1,118 @@
+﻿@page
+@model RegisterModel
+@using Uplift.Utility
+@{
+    
+}
+
+<h1>Register New Employee</h1>
+
+<div class="row backgroundWhite border">
+    <div class="col-md-12">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h4>Create a new account.</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Input.Name"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.Name" class="form-control" />
+                    <span asp-validation-for="Input.Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Input.Email"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Input.PhoneNumber"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.PhoneNumber" class="form-control" />
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Input.StreetAddress"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.StreetAddress" class="form-control" />
+                    <span asp-validation-for="Input.StreetAddress" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Input.City"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.City" class="form-control" />
+                    <span asp-validation-for="Input.City" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Input.State"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.State" class="form-control" />
+                    <span asp-validation-for="Input.State" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Input.PostalCode"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.PostalCode" class="form-control" />
+                    <span asp-validation-for="Input.PostalCode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Input.Password"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Input.ConfirmPassword"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3"></div>
+                <div class="col-5">
+                    <input type="radio" name="rdUserRole" value="@SD.Admin" /> @SD.Admin
+                    <input type="radio" name="rdUserRole" value="@SD.Manager" checked  /> @SD.Manager
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-5 offset-3">
+                    <button type="submit" class="btn btn-primary form-control">Register</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+  
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
