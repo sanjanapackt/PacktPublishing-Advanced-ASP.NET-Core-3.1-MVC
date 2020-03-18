@@ -1,0 +1,29 @@
+
+Scaffold Identity Change
+Microsoft has changed few things with Identity vs DefaultIdentity which we updated in startup.cs a while ago.
+
+Because of which the default paths to loginlogout and access denied fails.
+
+If in the next video you face this error all you have to do is add the following cookies to set the paths as explained below.
+
+
+
+Insisde Startup.cs - ConfigureServices
+
+Add the following code at end.
+
+services.ConfigureApplicationCookie(options =
+
+{
+
+          options.LoginPath = $IdentityAccountLogin;
+
+          options.LogoutPath = $IdentityAccountLogout;
+
+          options.AccessDeniedPath = $IdentityAccountAccessDenied;
+
+});
+
+They have explained it here-
+
+https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-3.0&tabs=visual-studio#create-full-identity-ui-source
